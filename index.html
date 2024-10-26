@@ -4,7 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sam geyer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">    <style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+    <style>
+        * {
+            cursor: none;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: rgba(76, 175, 80, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-cursor.clicking {
+            transform: scale(1.5);
+        }
+
         body {
             background-color: #000;
             color: #fff;
@@ -13,6 +33,7 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
+            cursor: none; 
         }
 
         h1 {
@@ -21,15 +42,33 @@
         }
 
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .projects, .contact {
-            margin-left: 1rem;
-        }
-
-        .item {
+        .project-card {
             margin-left: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 2px solid #4CAF50;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-content {
+            margin-left: 1.5rem;
+        }
+
+        .tech-stack, .key-learnings {
+            margin-top: 0.5rem;
+            color: #999;
+        }
+
+        .project-links {
+            margin-top: 1rem;
         }
 
         a {
@@ -47,14 +86,24 @@
             margin-right: 0.5rem;
         }
 
+        .contact {
+            margin-left: 2rem;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
+            }
+            
+            .project-card {
+                margin-left: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="custom-cursor"></div>
+
     <h1>sam geyer</h1>
 
     <div class="section">
@@ -63,21 +112,87 @@
 
     <div class="section">
         <p>current projects in my learning journey ↓</p>
-        <div class="projects">
-            <p class="item"><span class="bullet">▸</span><a href="https://wonky-grid.vercel.app/">wonky grid</a></p>
-            <p class="item"><span class="bullet">▸</span><a href="https://proj-movie-diary.vercel.app/">movie diary</a></p>
-            <p class="item"><span class="bullet">▸</span><a href="#"></a>hyper-hi (WIP)</p>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <span class="bullet">▸</span>
+                <a href="https://wonky-grid.vercel.app/">wonky grid</a>
+            </div>
+            <div class="project-content">
+                <p>a recreation of The Studio's award-winning 'wonky' grid slideshow effect</p>
+                <p class="tech-stack">built with: HTML • CSS Grid • JavaScript</p>
+                <p class="key-learnings">
+                    key learnings: CSS Grid with fractions, overflow handling, 
+                    JavaScript DOM events for fade effects, timed animations
+                </p>
+                <div class="project-links">
+                    <a href="https://wonky-grid.vercel.app/">Live Site →</a>
+                    <span style="margin: 0 0.5rem">•</span>
+                    <a href="https://github.com/yesworm/miniproj-wonky-grid">View Code →</a>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <span class="bullet">▸</span>
+                <a href="https://proj-movie-diary.vercel.app/">movie diary</a>
+            </div>
+            <div class="project-content">
+                <p>a brutalist-inspired movie tracking website with rotating posters.</p>
+                <p class="tech-stack">built with: JavaScript • CSS Animations • HTML5</p>
+                <p class="key-learnings">
+                    key learnings: CSS animations and transforms, scroll snap navigation, 
+                    JavaScript event handling
+                </p>
+                <div class="project-links">
+                    <a href="https://proj-movie-diary.vercel.app/">Live Site →</a>
+                    <span style="margin: 0 0.5rem">•</span>
+                    <a href="https://github.com/yesworm/proj-movie-diary">View Code →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <span class="bullet">▸</span>
+                <span>hyper-hi (WIP)</span>
+            </div>
+            <div class="project-content">
+                <p>An experimental canvas drawing project exploring blend modes and interactive elements.</p>
+                <p class="tech-stack">building with: HTML Canvas • JavaScript • DOM Events</p>
+                <p class="key-learnings">
+                    learning goals: Canvas drawing techniques, blend modes, 
+                    custom cursor implementation, JavaScript event handling
+                </p>
+            </div>
+        </div>
 
     <div class="section">
         <p>say hello</p>
         <div class="contact">
-            <p class="item"><span class="bullet">▸</span><a href="mailto:sam.geyer@hey.com">email</a></p>
-            <p class="item"><span class="bullet">▸</span><a href="https://x.com/trashw0rm">twitter</a></p>
-            <p class="item"><span class="bullet">▸</span><a href="https://github.com/yesworm">github</a></p>
-            <p class="item"><span class="bullet">▸</span><a href="https://www.are.na/sam-favj5cn6c7k/channels">are.na</a></p>
+            <p><span class="bullet">▸</span><a href="mailto:sam.geyer@hey.com">email</a></p>
+            <p><span class="bullet">▸</span><a href="https://x.com/trashw0rm">twitter</a></p>
+            <p><span class="bullet">▸</span><a href="https://github.com/yesworm">github</a></p>
+            <p><span class="bullet">▸</span><a href="https://www.are.na/sam-favj5cn6c7k/channels">are.na</a></p>
         </div>
     </div>
+
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('clicking');
+        });
+    </script>
 </body>
 </html>
