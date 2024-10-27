@@ -1,5 +1,35 @@
-/* Responsive adjustments */
+/* Base styles */
+.model-container {
+    position: absolute;
+    top: 500px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    z-index: 10; /* Ensure proper layering */
+}
+
+/* Consolidated responsive styles */
+@media (max-width: 1024px) {
+    .model-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Model container mobile styles */
+    .model-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 150px;
+        height: 150px;
+        margin: 2rem auto;
+        clear: both;
+    }
+
+    /* Existing project styles */
     .project-item {
         flex-direction: column;
     }
@@ -9,8 +39,17 @@
         margin-bottom: 1rem;
     }
 
-    .marquee-content {
+    /* Existing marquee styles */
+    .marquee-items {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-container {
+        width: 120px;
+        height: 120px;
+        margin: 1rem auto;
     }
 }
 
@@ -28,7 +67,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👆</text></svg>") 16 0,
+    auto;
 }
+
 
 body {
     font-family: monospace;
@@ -44,16 +86,6 @@ body {
     line-height: 1;
     margin: 2rem 0;
     white-space: pre;
-}
-
-.model-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 200px;
-    height: 200px;
-    border: 1px solid #000;
-    overflow: hidden;
 }
 
 #head-model {
