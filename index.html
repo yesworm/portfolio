@@ -6,6 +6,9 @@
     <title>sam geyer</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
     <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <!-- ASCII Art Title -->
@@ -56,6 +59,10 @@
 
 
     </pre>
+
+    <div class="model-container">
+        <div id="head-model"></div>
+    </div>
 
     <p class="intro">aspiring developer, learning via boot.dev, the odin project & superhi.</p>
 
@@ -136,5 +143,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="model.js"></script>
 </body>
 </html>
